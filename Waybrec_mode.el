@@ -30,9 +30,9 @@
     (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bqPat) (cdr hcNew));
     (push "\\|\\(?1:replace\\)\\>" (cdr hcNew));
 
-    ;; Wayhead designator
-    ;; ──────────────────
-    (push "\\|\\(?1:wayhead\\)\\>" (cdr hcNew))
+    ;; Thoroughbrec designator
+    ;; ───────────────────────
+    (push "\\|\\(?1:thoroughbrec\\)\\>" (cdr hcNew))
 
     (set (make-local-variable 'brecCommandHighlighterComponents) hc))
        ;;; So isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
