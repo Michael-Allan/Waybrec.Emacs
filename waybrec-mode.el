@@ -4,8 +4,8 @@
 ;; ─────
 ;;   In your initialization file:
 ;;
-;;      (require 'Breccia_mode)
-;;      (require 'Waybrec_mode)
+;;      (require 'breccia-mode)
+;;      (require 'waybrec-mode)
 ;;      (add-to-list 'auto-mode-alist '(           "\\.brec\\'" . breccia-mode))
 ;;      (add-to-list 'auto-mode-alist '("/waycast/.+\\.brec\\'" . waybrec-mode))
 ;;        ;; Only if the file is located in a waycast, that is.
@@ -42,7 +42,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;
 
-(provide 'Waybrec_mode)
+(provide 'waybrec-mode); Providing these features of `waybrec-mode.el` for all who `require` them.
 
 
 ;; NOTE
