@@ -18,25 +18,25 @@
 (define-derived-mode waybrec-mode breccia-mode
   "Waybrec"
   "A major mode for editing Waybrec"
-  (let* ((bqPat brecBackquotedPatternPattern)
-         (gap brecGapPattern)
-         (hc (copy-sequence brecCommandHighlighterComponents)); So isolating from any other
+  (let* ((bq-pat brec-backquoted-pattern-pattern)
+         (gap brec-gap-pattern)
+         (hc (copy-sequence brec-command-highlighter-components)); So isolating from any other
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
-         (hcNew (last hc 2))); The component after which to insert new components.
+         (hc-new (last hc 2))); The component after which to insert new components.
 
     ;; Patch
     ;; ─────
-    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bqPat) (cdr hcNew));
-    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bqPat) (cdr hcNew));
-    (push "\\|\\(?1:replace\\)\\>" (cdr hcNew));
+    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bq-pat) (cdr hc-new));
+    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bq-pat) (cdr hc-new));
+    (push "\\|\\(?1:replace\\)\\>" (cdr hc-new));
 
     ;; Thoroughfractum designator
     ;; ──────────────────────────
-    (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr hcNew))
+    (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr hc-new))
 
-    (set (make-local-variable 'brecCommandHighlighterComponents) hc))
+    (set (make-local-variable 'brec-command-highlighter-components) hc))
        ;;; So isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
-  (set 'font-lock-defaults '(brecKeywords))); ‘It automatically becomes buffer-local when set.’ [FLB]
+  (set 'font-lock-defaults '(brec-keywords))); ‘It automatically becomes buffer-local when set.’ [FLB]
 
 
 
