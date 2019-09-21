@@ -51,4 +51,4 @@
 ;;        https://www.gnu.org/software/emacs/manual/html_node/elisp/Font-Lock-Basics.html
 
 
-                                      ;;; Copyright © 2019 Michael Allan and contributors.  Licence MIT.
+                                       ;;; Copyright © 2019 Michael Allan and contributors.  Licence MIT.
