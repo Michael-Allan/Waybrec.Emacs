@@ -40,8 +40,6 @@
 
 
 
-;;;;;;;;;;;;;;;;;;;;
-
 (provide 'waybrec-mode); Providing these features of `waybrec-mode.el` for all who `require` them.
 
 
