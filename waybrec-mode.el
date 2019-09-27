@@ -1,4 +1,4 @@
-;; The implementation of Waybrec mode, a major mode for editing Waybrec.
+;; The definition of Waybrec mode, a major mode for editing Waybrec.
 ;;
 ;; USAGE
 ;; ─────
@@ -16,8 +16,7 @@
 
 
 (define-derived-mode waybrec-mode breccia-mode
-  "Waybrec"
-  "A major mode for editing Waybrec"
+  "Waybrec" "A major mode for editing Waybrec"
   (let* ((bq-pat brec-backquoted-pattern-pattern)
          (gap brec-gap-pattern)
          (hc (copy-sequence brec-command-highlighter-components)); So isolating from any other
