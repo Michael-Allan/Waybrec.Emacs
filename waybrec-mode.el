@@ -1,4 +1,4 @@
-;; The definition of Waybrec mode, a major mode for editing Waybrec.
+;; The definition of Waybrec mode, a major mode for editing Waybrec.  -*- lexical-binding: t; -*-
 ;;
 ;; USAGE
 ;; ─────
