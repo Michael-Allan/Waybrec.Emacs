@@ -4,15 +4,17 @@
 ;; ─────
 ;;   In your initialization file:
 ;;
-;;      (require 'breccia-mode)
 ;;      (require 'waybrec-mode)
-;;      (add-to-list 'auto-mode-alist '(           "\\.brec\\'" . breccia-mode))
 ;;      (add-to-list 'auto-mode-alist '("/waycast/.+\\.brec\\'" . waybrec-mode))
 ;;        ;; Only if the file is located in a waycast, that is.
 ;;
 ;;   Working example:
 ;;
 ;;       http://reluk.ca/.emacs
+
+
+(require 'breccia-mode)
+
 
 
 (define-derived-mode waybrec-mode breccia-mode
