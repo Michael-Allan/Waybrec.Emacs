@@ -39,19 +39,13 @@ User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/waybrec-mod
       ;; ──────────────────────────
       (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr hc-new))
 
-      (set (make-local-variable 'brec-command-highlighter-components) hc))
-         ;;; So isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
-    (set 'font-lock-defaults '(brec-keywords))); ‘It automatically becomes buffer-local when set.’ [FLB]
+      (setq-local brec-command-highlighter-components hc))
+        ;;; Locally isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
+    (brec-set-for-buffer 'font-lock-defaults '(brec-keywords)))
 
 
 
   (provide 'waybrec-mode))
-
-
-;; NOTE
-;; ────
-;;   FLB  Font lock basics.
-;;        https://www.gnu.org/software/emacs/manual/html_node/elisp/Font-Lock-Basics.html
 
 
                                        ;;; Copyright © 2019 Michael Allan and contributors.  Licence MIT.
