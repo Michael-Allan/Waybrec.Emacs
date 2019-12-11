@@ -18,8 +18,8 @@
 
 
 (define-derived-mode waybrec-mode breccia-mode
-  "Waybrec"
-  "A major mode for editing Waybrec.
+  "Waybrec" "\
+A major mode for editing Waybrec.
         Home page URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’
 User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/waybrec-mode.el’"
   (let* ((bq-pat brec-backquoted-pattern-pattern)
