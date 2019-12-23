@@ -10,7 +10,7 @@
 ;;
 ;;   Working example:
 ;;
-;;       http://reluk.ca/sys/computer/Havoc/etc/emacs/user-initialization.el
+;;       http://reluk.ca/.emacs.d/lisp/initialization.el
 
 
 (require 'breccia-mode)
