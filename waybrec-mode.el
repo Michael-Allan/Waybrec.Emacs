@@ -2,11 +2,14 @@
 ;;
 ;; USAGE
 ;; ─────
-;;   In your initialization file:
+;;   1. Put a copy of this file on your load path.
+;;      https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
 ;;
-;;      (require 'waybrec-mode)
-;;      (add-to-list 'auto-mode-alist '("/waycast/.+\\.brec\\'" . waybrec-mode))
-;;        ;; Only if the file is located in a waycast, that is.
+;;   2. Add the following to your initialization file.
+;;
+;;       (autoload 'waybrec-mode "waybrec-mode" nil t)
+;;       (set 'auto-mode-alist (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
+;;         ;; Associating Waybrec mode, that is, with any Breccian file located in a waycast.
 ;;
 ;;   Working example:
 ;;
@@ -47,4 +50,4 @@ User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/waybrec-mod
 (provide 'waybrec-mode)
 
 
-                                       ;;; Copyright © 2019 Michael Allan and contributors.  Licence MIT.
+                                  ;;; Copyright © 2019-2020 Michael Allan and contributors.  Licence MIT.
