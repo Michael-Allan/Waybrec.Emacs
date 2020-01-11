@@ -27,21 +27,21 @@ A major mode for editing Waybrec.
 User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/waybrec-mode.el’"
   (let* ((bq-pat brec-backquoted-pattern-pattern)
          (gap brec-gap-pattern)
-         (hc (copy-sequence brec-command-highlighter-components)); So isolating from any other
+         (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
-         (hc-new (last hc 2))); The component after which to insert new components.
+         (mc-new (last mc 2))); The component after which to insert new components.
 
     ;; Patch
     ;; ─────
-    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bq-pat) (cdr hc-new));
-    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bq-pat) (cdr hc-new));
-    (push "\\|\\(?1:replace\\)\\>" (cdr hc-new));
+    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bq-pat) (cdr mc-new));
+    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bq-pat) (cdr mc-new));
+    (push "\\|\\(?1:replace\\)\\>" (cdr mc-new));
 
     ;; Thoroughfractum designator
     ;; ──────────────────────────
-    (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr hc-new))
+    (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr mc-new))
 
-    (setq-local brec-command-highlighter-components hc))
+    (setq-local brec-command-matcher-components mc))
       ;;; Locally isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
   (brec-set-for-buffer 'font-lock-defaults '(brec-keywords)))
 
