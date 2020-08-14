@@ -1,0 +1,26 @@
+Using Waybrec mode
+
+
+    ━━━━━━━━━━━━━━
+     Installation
+    ──────────────
+        1. Put a copy of `waybrec-mode.el` on your load path.
+            : re `waybrec-mode.el` see ./waybrec-mode.el
+            : re `load path` see
+              https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
+
+        2. Add the following to your initialization file.
+
+              (autoload 'waybrec-mode "waybrec-mode" nil t)
+              (set 'auto-mode-alist
+                   (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
+
+            : re `initialization file` see
+              https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
+
+        working example
+            : see http://reluk.ca/.emacs.d/lisp/initialization.el
+
+
+
+                                   \ Copyright © 2019-2020, Michael Allan and contributors.  Licence MIT.

@@ -1,19 +1,7 @@
-;; The definition of Waybrec mode, a major mode for editing Waybrec.  -*- lexical-binding: t; -*-
+;; Waybrec mode  │ -*- lexical-binding: t; -*-
 ;;
-;; USAGE
-;; ─────
-;;   1. Put a copy of this file on your load path.
-;;      https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
-;;
-;;   2. Add the following to your initialization file.
-;;
-;;       (autoload 'waybrec-mode "waybrec-mode" nil t)
-;;       (set 'auto-mode-alist (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
-;;         ;; Associating Waybrec mode, that is, with any Breccian file located in a waycast.
-;;
-;;   Working example:
-;;
-;;       http://reluk.ca/.emacs.d/lisp/initialization.el
+;; This is the definition of Waybrec mode, a major mode for editing Waybrec.  For usage instructions, see
+;; `./user_instructions.brec` or `http://reluk.ca/project/wayic/Waybrec/Emacs/user_instructions.brec`.
 
 
 (require 'breccia-mode)
@@ -24,7 +12,7 @@
   "Waybrec" "\
 A major mode for editing Waybrec.
         Home page URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’
-User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/waybrec-mode.el’"
+User instructions URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/user_instructions.brec’"
   (let* ((bq-pat brec-backquoted-pattern-pattern)
          (gap brec-gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
