@@ -1,16 +1,35 @@
 <!-- - -
  ! Targeted by Git Hub adaptor link `README.md`, this file is written in Markdown compatible HTML. -->
-<h1 lang='en-CA'>A Waybrec mode for Emacs</h1>
+<h1 lang='en-CA'>Waybrec Mode for Emacs</h1>
 <section lang='en-CA'> <!-- Introduction -->
     <p>
-        Here is project Waybrec.Emacs.  This project implements
-        an Emacs <a href='https://www.gnu.org/software/emacs/manual/html_node/elisp/Major-Modes.html'>
-        major mode</a> for editing Waybrec. <!-- Sync ← `./waybrec-mode.el`. -->
+        Here is package Waybrec Mode for Emacs.  This package introduces a major mode for editing
+        <a href='http://reluk.ca/project/wayic/Waybrec/'>Waybrec</a>.
         </p>
     </section>
-<section lang='en-CA'> <!-- Copying -->
+<section lang='en-CA'>
+    <h2>Installation</h2>
     <p>
-        Copyright © 2019-2020, Michael Allan and contributors.
+        If you install this package using a package manager, then one step will remain
+        to complete the installation.  Add the following code to your
+        <a href='https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html'>
+        initialization file</a>.
+        </p>
+<pre>    (set 'auto-mode-alist
+         (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))</pre>
+    <p>
+        Ensure the regular expression captures the path to your waysource files.  Then Waybrec Mode
+        will activate on loading any of them into Emacs.  And that completes the installation.
+        </p>
+    <p>
+        Manual installation, on the other hand, requires further steps.
+        In that case, see `<a href='waybrec-mode.el'>waybrec-mode.el</a>` for instructions.
+        </p>
+    </section>
+<section lang='en-CA'>
+    <h2>Copying</h2>
+    <p>
+        Copyright © 2019-2020, Michael Allan.
         The files for this project are released under an <a href='LICENCE.txt'>MIT licence</a>.
         </p>
     </section>
