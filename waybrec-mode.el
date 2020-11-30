@@ -56,7 +56,7 @@
 A major mode for editing Waybrec.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   (let* ((bq-pat brec-backquoted-pattern-pattern)
-         (gap brec-gap-pattern)
+         (gap brec-partial-gap-pattern); Partial and deprecated. [BUG]
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
          (mc-new (last mc 2))); The component after which to insert new components.
@@ -78,6 +78,11 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
 
 
 (provide 'waybrec-mode)
+
+
+;; NOTE
+;; ────
+;;   BUG  This code is incorrect.
 
 
 ;; - - - - - - - - - -
