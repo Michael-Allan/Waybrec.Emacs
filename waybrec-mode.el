@@ -41,8 +41,6 @@
 ;; For a working example of manual installation, see the relevant lines
 ;; of `http://reluk.ca/.emacs.d/lisp/initialization.el`, and follow the reference there.
 
-
-
 ;;; Code:
 
 
@@ -85,5 +83,4 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
 ;;   BUG  This code is incorrect.
 
 
-;; - - - - - - - - - -
 ;;; waybrec-mode.el ends here
