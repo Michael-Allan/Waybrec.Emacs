@@ -4,6 +4,7 @@
 
 ;; Author: Michael Allan <mike@reluk.ca>
 ;; Version: 0-snapshot
+;; SPDX-License-Identifier: MIT
 ;; Package-Requires: (breccia-mode)
 ;; Keywords: wp, outlines
 ;; URL: http://reluk.ca/project/wayic/Waybrec/Emacs/
