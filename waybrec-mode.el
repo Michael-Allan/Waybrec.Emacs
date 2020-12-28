@@ -44,8 +44,13 @@
 
 ;;; Code:
 
-
 (require 'breccia-mode)
+
+
+
+(defconst waybrec--gap-pattern; Incomplete, deprecated in favour of `brec-gap-pattern`. [BUG]
+  "[ \n]+" "\
+The regular-expression pattern of a gap in a descriptor.")
 
 
 
@@ -55,7 +60,7 @@
 A major mode for editing Waybrec.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   (let* ((bq-pat brec-backquoted-pattern-pattern)
-         (gap brec-partial-gap-pattern); Partial and deprecated. [BUG]
+         (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
          (mc-new (last mc 2))); The component after which to insert new components.
