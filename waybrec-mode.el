@@ -40,7 +40,7 @@
 ;;      Ensure too that `auto-mode-alist` is set, as described further above.
 ;;
 ;; For a working example of manual installation, see the relevant lines
-;; of `http://reluk.ca/.emacs.d/lisp/initialization.el`, and follow the reference there.
+;; of `http://reluk.ca/.config/emacs/lisp/initialization.el`, and follow the reference there.
 
 ;;; Code:
 
