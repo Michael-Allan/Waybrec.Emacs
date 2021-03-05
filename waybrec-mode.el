@@ -1,6 +1,6 @@
 ;;; waybrec-mode.el --- A major mode for editing Waybrec  -*- lexical-binding: t; -*-
 
-;; Copyright © 2019-2020 Michael Allan.
+;; Copyright © 2019-2021 Michael Allan.
 
 ;; Author: Michael Allan <mike@reluk.ca>
 ;; Version: 0-snapshot
@@ -13,8 +13,8 @@
 
 ;;; Commentary:
 
-;; This package introduces a major mode for editing Waybrec.  For more information,
-;; see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
+;; This package introduces a major mode for editing Waybreccian text (`waybrec-mode`).
+;; For more information, see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
 ;;
 ;; If you install this package using a package manager, then one step will remain to complete
 ;; the installation.  Add the following code to your initialization file.
@@ -22,7 +22,7 @@
 ;;
 ;;     (set 'auto-mode-alist (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
-;; Ensure the regular expression captures the path to your waysource files.  Then Waybrec Mode
+;; Ensure the regular expression above captures the path to your waysource files.  Then `waybrec-mode`
 ;; will activate on loading any of them into Emacs.  And that completes the installation.
 ;;
 ;; Manual installation, on the other hand, requires further steps:
@@ -57,7 +57,7 @@ The regular-expression pattern of a gap in a descriptor.")
 ;;;###autoload
 (define-derived-mode waybrec-mode breccia-mode
   "Waybrec" "\
-A major mode for editing Waybrec.  For more information,
+A major mode for editing Waybreccian text.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   (let* ((bq-pat brec-backquoted-pattern-pattern)
          (gap waybrec--gap-pattern)
