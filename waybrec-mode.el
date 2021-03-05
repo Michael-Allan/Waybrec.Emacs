@@ -16,8 +16,8 @@
 ;; This package introduces a major mode for editing Waybreccian text (`waybrec-mode`).
 ;; For more information, see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
 ;;
-;; If you install this package using a package manager, then one step will remain to complete
-;; the installation.  Add the following code to your initialization file.
+;; If you install this package using a package manager, then it takes one more step to complete
+;; the installation.  Add the following to your initialization file.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
 ;;
 ;;     (set 'auto-mode-alist (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
