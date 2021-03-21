@@ -48,6 +48,14 @@
 
 
 
+(defgroup waybrec nil "\
+A major mode for editing Waybreccian text"
+  :group 'text
+  :prefix "waybrec-"
+  :link '(url-link "http://reluk.ca/project/wayic/Waybrec/Emacs/"))
+
+
+
 (defconst waybrec--gap-pattern; Incomplete, deprecated in favour of `brec-gap-pattern`. [BUG]
   "[ \n]+" "\
 The regular-expression pattern of a gap in a descriptor.")
@@ -59,6 +67,8 @@ The regular-expression pattern of a gap in a descriptor.")
   "Waybrec" "\
 A major mode for editing Waybreccian text.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
+  :group 'waybrec
+
   (let* ((bq-pat brec-backquoted-pattern-pattern)
          (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
