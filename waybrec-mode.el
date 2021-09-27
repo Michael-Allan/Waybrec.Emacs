@@ -70,6 +70,8 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   :group 'waybrec
 
   (let* ((bq-pat brec-backquoted-pattern-pattern)
+         (end brec-term-end-boundary-pattern); To reject any command keyword directly followed by
+           ;;; further term characters, e.g. the misplaced delimiter ‘:’ of an appendage clause.
          (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
@@ -79,11 +81,11 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
     ;; ─────
     (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bq-pat) (cdr mc-new));
     (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bq-pat) (cdr mc-new));
-    (push "\\|\\(?1:replace\\)\\>" (cdr mc-new));
+    (push (concat "\\|\\(?1:replace\\)" end) (cdr mc-new));
 
     ;; Thoroughfractum designator
     ;; ──────────────────────────
-    (push "\\|\\(?1:thoroughfractum\\)\\>" (cdr mc-new))
+    (push (concat "\\|\\(?1:thoroughfractum\\)\\>" end) (cdr mc-new))
 
     (setq-local brec-command-matcher-components mc))
       ;;; Locally isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
