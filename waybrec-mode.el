@@ -1,6 +1,6 @@
 ;;; waybrec-mode.el --- A major mode for editing Waybrec  -*- lexical-binding: t; -*-
 
-;; Copyright © 2019-2021 Michael Allan.
+;; Copyright © 2019-2022 Michael Allan.
 
 ;; Author: Michael Allan <mike@reluk.ca>
 ;; Version: 0-snapshot
@@ -69,7 +69,7 @@ A major mode for editing Waybreccian text.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   :group 'waybrec
 
-  (let* ((bq-pat brec-backquoted-pattern-pattern)
+  (let* ((pattern-matcher brec-pattern-matcher-pattern)
          (end brec-term-end-boundary-pattern); To reject any command keyword directly followed by
            ;;; further term characters, e.g. the misplaced delimiter ‘:’ of an appendage clause.
          (gap waybrec--gap-pattern)
@@ -79,8 +79,8 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
 
     ;; Patch
     ;; ─────
-    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap bq-pat) (cdr mc-new));
-    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap bq-pat) (cdr mc-new));
+    (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap pattern-matcher) (cdr mc-new));
+    (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap pattern-matcher) (cdr mc-new));
     (push (concat "\\|\\(?1:replace\\)" end) (cdr mc-new));
 
     ;; Thoroughfractum designator
