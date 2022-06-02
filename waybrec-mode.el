@@ -77,7 +77,7 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
            ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
          (mc-new (last mc 2))); The component after which to insert new components.
 
-    ;; Patch
+    ;; Patch (defunct and deprecated)
     ;; ─────
     (push (concat "\\|\\(?1:prepend\\|append\\)" gap "@" gap pattern-matcher) (cdr mc-new));
     (push (concat "\\|\\(?1:delete\\|precede\\|succeed\\)" gap pattern-matcher) (cdr mc-new));
