@@ -20,7 +20,7 @@
 ;; the installation.  Add the following to your initialization file.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
 ;;
-;;     (set 'auto-mode-alist (cons (cons "/waycast/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
+;;     (set 'auto-mode-alist (cons (cons "/way/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
 ;; Ensure the regular expression above captures the path to your waysource files.  Then `waybrec-mode`
 ;; will activate on loading any of them into Emacs.  And that completes the installation.
