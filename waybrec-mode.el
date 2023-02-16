@@ -1,50 +1,55 @@
 ;;; waybrec-mode.el --- A major mode for editing Waybrec  -*- lexical-binding: t; -*-
 
 ;; Copyright © 2019-2022 Michael Allan.
-
+;;
 ;; Author: Michael Allan <mike@reluk.ca>
 ;; Version: 0-snapshot
 ;; SPDX-License-Identifier: MIT
-;; Package-Requires: (breccia-mode)
-;; Keywords: wp, outlines
+;; Package-Requires: (brec-mode (emacs "24.3"))
+;; Keywords: outlines, wp
 ;; URL: http://reluk.ca/project/wayic/Waybrec/Emacs/
-
+;;
 ;; This file is not part of GNU Emacs.
+;;
+;; This file is released under an MIT licence.  A copy of the licence normally accompanies it.
+;; If not, then see `http://reluk.ca/project/wayic/Waybrec/Emacs/LICENCE.txt`.
 
 ;;; Commentary:
 
-;; This package introduces a major mode for editing Waybreccian text (`waybrec-mode`).
-;; For more information, see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
+;;   This package introduces a major mode (`waybrec-mode`) for editing Waybreccian text.
+;;   For more information, see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
 ;;
-;; If you install this package using a package manager, then it takes one more step to complete
-;; the installation.  Add the following to your initialization file.
-;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
+;; Installation
+;;
+;;   If you install this package using a package manager, then it takes one more step to complete
+;;   the installation.  Add the following to your initialization file.
+;;   https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
 ;;
 ;;     (set 'auto-mode-alist (cons (cons "/way/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
-;; Ensure the regular expression above captures the path to your waysource files.  Then `waybrec-mode`
-;; will activate on loading any of them into Emacs.  And that completes the installation.
+;;   Ensure the regular expression above captures the path to your waysource files.  Then `waybrec-mode`
+;;   will activate on loading any of them into Emacs.  And that completes the installation.
 ;;
-;; Manual installation, on the other hand, requires further steps:
+;;   Manual installation, on the other hand, requires further steps:
 ;;
-;;   1. Put a copy of the present file on your load path.
-;;      https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
+;;       1. Put a copy of the present file on your load path.
+;;          https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
 ;;
-;;   2. Optionally compile that copy.  E.g. load it into an Emacs buffer and type
-;;      `M-x emacs-lisp-byte-compile`.
+;;       2. Optionally compile that copy.  E.g. load it into an Emacs buffer and type
+;;          `M-x emacs-lisp-byte-compile`.
 ;;
-;;   3. Add the following code to your initialization file.
+;;       3. Add the following code to your initialization file.
 ;;
-;;         (autoload 'waybrec-mode "waybrec-mode" nil t)
+;;             (autoload 'waybrec-mode "waybrec-mode" nil t)
 ;;
-;;      Ensure too that `auto-mode-alist` is set, as described further above.
+;;          Ensure too that `auto-mode-alist` is set, as described further above.
 ;;
-;; For a working example of manual installation, see the relevant lines
-;; of `http://reluk.ca/.config/emacs/lisp/initialization.el`, and follow the reference there.
+;;   For a working example of manual installation, see the relevant lines of the file
+;;   `http://reluk.ca/.config/emacs/lisp/initialization.el` and follow the reference there.
 
 ;;; Code:
 
-(require 'breccia-mode)
+(require 'brec-mode)
 
 
 
@@ -63,7 +68,7 @@ The regular-expression pattern of a gap in a descriptor.")
 
 
 ;;;###autoload
-(define-derived-mode waybrec-mode breccia-mode
+(define-derived-mode waybrec-mode brec-mode
   "Waybrec" "\
 A major mode for editing Waybreccian text.  For more information,
 see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
@@ -74,7 +79,7 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
            ;;; further term characters, e.g. the misplaced delimiter ‘:’ of an appendage clause.
          (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
-           ;;; `breccia-mode` buffer the (deep) changes about to be introduced to this list.
+           ;;; `brec-mode` buffer the (deep) changes about to be introduced to this list.
          (mc-new (last mc 2))); The component after which to insert new components.
 
     ;; Patch (defunct and deprecated)
@@ -88,7 +93,7 @@ see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
     (push (concat "\\|\\(?1:thoroughfractum\\)\\>" end) (cdr mc-new))
 
     (setq-local brec-command-matcher-components mc))
-      ;;; Locally isolating from any other `breccia-mode` buffer the (shallow) change to this variable.
+      ;;; Locally isolating from any other `brec-mode` buffer the (shallow) change to this variable.
   (brec-set-for-buffer 'font-lock-defaults '(brec-keywords)))
 
 
