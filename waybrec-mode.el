@@ -32,7 +32,7 @@
 ;;
 ;;   Manual installation, on the other hand, requires further steps:
 ;;
-;;       1. Put a copy of the present file on your load path.
+;;       1. Put a copy of `waybrec-mode.el` on your load path.
 ;;          https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
 ;;
 ;;       2. Optionally compile that copy.  E.g. load it into an Emacs buffer and type
@@ -45,7 +45,7 @@
 ;;          Ensure too that `auto-mode-alist` is set, as described further above.
 ;;
 ;;   For a working example of manual installation, see the relevant lines of the file
-;;   `http://reluk.ca/.config/emacs/lisp/initialization.el` and follow the reference there.
+;;   `http://reluk.ca/.config/emacs/lisp/initialization.el`.
 
 ;;; Code:
 
