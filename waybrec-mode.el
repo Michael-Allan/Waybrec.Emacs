@@ -54,7 +54,7 @@
 
 
 (defgroup waybrec nil
-  "A major mode for editing Waybreccian text"
+  "A major mode for editing Waybreccian text."
   :group 'text
   :prefix "waybrec-"
   :link '(url-link "http://reluk.ca/project/wayic/Waybrec/Emacs/"))
@@ -70,8 +70,8 @@
 ;;;###autoload
 (define-derived-mode waybrec-mode brec-mode
   "Waybrec"
-  "A major mode for editing Waybreccian text.  For more information,
-see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
+  "A major mode for editing Waybreccian text.
+For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   :group 'waybrec
 
   (let* ((pattern-matcher brec-pattern-matcher-pattern)
