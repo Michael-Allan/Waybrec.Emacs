@@ -76,7 +76,7 @@ For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’
 
   (let* ((pattern-matcher brec-pattern-matcher-pattern)
          (end brec-term-end-boundary-pattern); To reject any command keyword directly followed by
-           ;;; further term characters, e.g. the misplaced delimiter ‘:’ of an appendage clause.
+           ;;; further term characters, e.g. the misplaced delimiter `:` of an appendage clause.
          (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
            ;;; `brec-mode` buffer the (deep) changes about to be introduced to this list.
