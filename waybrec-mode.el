@@ -1,6 +1,6 @@
 ;;; waybrec-mode.el --- A major mode for editing Waybrec  -*- lexical-binding: t; -*-
 
-;; Copyright © 2019-2022 Michael Allan.
+;; Copyright © 2019-2022, 2024 Michael Allan.
 ;;
 ;; Author: Michael Allan <mike@reluk.ca>
 ;; Version: 0-snapshot
@@ -21,31 +21,29 @@
 ;;
 ;; Installation
 ;;
-;;   If you install this package using a package manager, then it takes one more step to complete
-;;   the installation.  Add the following to your initialization file.
-;;   https://www.gnu.org/software/emacs/manual/html_node/emacs/Init-File.html
+;;   If you installed this package using a package manager, then a further step is required to complete
+;;   the installation.  Add the following to your Emacs initialization file and ensure the regular
+;;   expression is correct, as described for the manual installation further below.
 ;;
 ;;     (set 'auto-mode-alist (cons (cons "/way/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
-;;   Ensure the regular expression above captures the path to your waysource files.  Then Waybrec Mode
-;;   will activate on loading any of them into Emacs.  And that completes the installation.
-;;
-;;   Manual installation, on the other hand, requires further steps:
+;;   Alternatively, you may want to install the whole package manually:
 ;;
 ;;       1. Put a copy of the file `waybrec-mode.el` on your load path.
 ;;          https://www.gnu.org/software/emacs/manual/html_node/elisp/Library-Search.html
 ;;
-;;       2. Optionally compile that copy.  E.g. load it into an Emacs buffer and type
-;;          `M-x emacs-lisp-byte-compile`.
+;;       2. Optionally compile that copy.  Load it into an Emacs buffer, for example,
+;;          and type `M-x emacs-lisp-byte-compile`.
 ;;
 ;;       3. Add the following code to your initialization file.
 ;;
 ;;             (autoload 'waybrec-mode "waybrec-mode" nil t)
+;;             (set 'auto-mode-alist (cons (cons "/way/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
-;;          Ensure too that `auto-mode-alist` is set, as described further above.
+;;          Ensure the regular expression above matches the path to your waysource files,
+;;          so that Waybrec Mode activates automatically on opening them.
 ;;
-;;   For a working example of manual installation, see the relevant lines of the file
-;;   `http://reluk.ca/.config/emacs/lisp/initialization.el`.
+;;   For a working example, see the relevant lines of `http://reluk.ca/.config/emacs/initialization.el`.
 
 ;;; Code:
 
