@@ -16,7 +16,7 @@
 
 ;;; Commentary:
 
-;;   This package introduces a major mode (`waybrec-mode`) for editing Waybreccian text.
+;;   This package implements Waybrec Mode, a major mode for editing Waybrec.
 ;;   For more information, see `http://reluk.ca/project/wayic/Waybrec/Emacs/`.
 ;;
 ;; Installation
@@ -27,7 +27,7 @@
 ;;
 ;;     (set 'auto-mode-alist (cons (cons "/way/.*\\.brec\\'" 'waybrec-mode) auto-mode-alist))
 ;;
-;;   Ensure the regular expression above captures the path to your waysource files.  Then `waybrec-mode`
+;;   Ensure the regular expression above captures the path to your waysource files.  Then Waybrec Mode
 ;;   will activate on loading any of them into Emacs.  And that completes the installation.
 ;;
 ;;   Manual installation, on the other hand, requires further steps:
@@ -54,7 +54,7 @@
 
 
 (defgroup waybrec nil
-  "A major mode for editing Waybreccian text."
+  "A major mode for editing Waybrec."
   :group 'text
   :prefix "waybrec-"
   :link '(url-link "http://reluk.ca/project/wayic/Waybrec/Emacs/"))
@@ -70,7 +70,7 @@
 ;;;###autoload
 (define-derived-mode waybrec-mode brec-mode
   "Waybrec"
-  "A major mode for editing Waybreccian text.
+  "A major mode for editing Waybrec.
 For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
   :group 'waybrec
 
@@ -79,7 +79,7 @@ For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’
            ;;; further term characters, e.g. the misplaced delimiter `:` of an appendage clause.
          (gap waybrec--gap-pattern)
          (mc (copy-sequence brec-command-matcher-components)); So isolating from any other
-           ;;; `brec-mode` buffer the (deep) changes about to be introduced to this list.
+           ;;; Brec Mode buffer the (deep) changes about to be introduced to this list.
          (mc-new (last mc 2))); The component after which to insert new components.
 
     ;; Patch (defunct and deprecated)
@@ -93,7 +93,7 @@ For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’
     (push (concat "\\|\\(?1:thoroughfractum\\)\\>" end) (cdr mc-new))
 
     (setq-local brec-command-matcher-components mc))
-      ;;; Locally isolating from any other `brec-mode` buffer the (shallow) change to this variable.
+      ;;; Locally isolating from any other Brec Mode buffer the (shallow) change to this variable.
   (brec-set-for-buffer 'font-lock-defaults '(brec-keywords)))
 
 
