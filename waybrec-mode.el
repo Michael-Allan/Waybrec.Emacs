@@ -69,7 +69,7 @@
 (define-derived-mode waybrec-mode brec-mode
   "Waybrec"
   "A major mode for editing Waybrec.
-For more information, see URL ‘http://reluk.ca/project/wayic/Waybrec/Emacs/’."
+For more information, see URL `http://reluk.ca/project/wayic/Waybrec/Emacs/'."
   :group 'waybrec
 
   (let* ((pattern-matcher brec-pattern-matcher-pattern)
